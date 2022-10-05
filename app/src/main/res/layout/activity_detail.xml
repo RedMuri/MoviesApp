@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.DetailActivity">
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_black"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/detailImageViewPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/content_description_poster_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_background" />
+
+            <ImageView
+                android:id="@+id/detailButtonFavorite"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="32dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@android:drawable/btn_star_big_off"
+                app:layout_constraintBottom_toBottomOf="@id/detailImageViewPost"
+                app:layout_constraintEnd_toEndOf="@id/detailImageViewPost"
+                app:layout_constraintTop_toBottomOf="@id/detailImageViewPost"
+                android:contentDescription="@string/detail_button_add_to_favourite" />
+
+            <TextView
+                android:id="@+id/detailTextViewTitle"
+                style="@style/TitleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_marginTop="40dp"
+                app:layout_constraintBottom_toTopOf="@id/detailTextViewReleaseDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detailImageViewPost" />
+
+            <TextView
+                android:id="@+id/detailTextViewReleaseDate"
+                style="@style/PaleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintBottom_toTopOf="@id/detailTextViewDescription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailTextViewTitle" />
+
+            <TextView
+                android:id="@+id/detailTextViewDescription"
+                style="@style/Description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="desc"
+                app:layout_constraintBottom_toTopOf="@id/detailTagTextViewPopularity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detailTextViewReleaseDate" />
+
+            <TextView
+                android:id="@+id/detailTagTextViewPopularity"
+                style="@style/SimpleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_tag_popularity"
+                app:layout_constraintBottom_toTopOf="@id/detailTagTextViewVoteCount"
+                app:layout_constraintEnd_toStartOf="@id/detailTextViewPopularity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailTextViewDescription" />
+
+            <TextView
+                android:id="@+id/detailTextViewPopularity"
+                style="@style/SimpleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/detailTagTextViewPopularity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/detailTagTextViewPopularity"
+                app:layout_constraintTop_toTopOf="@id/detailTagTextViewPopularity" />
+
+            <TextView
+                android:id="@+id/detailTagTextViewVoteCount"
+                style="@style/SimpleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_tag_vote_count"
+                app:layout_constraintBottom_toBottomOf="@id/detailTagTextViewVoteAverage"
+                app:layout_constraintEnd_toStartOf="@id/detailTextViewVoteCount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailTagTextViewPopularity" />
+
+            <TextView
+                android:id="@+id/detailTextViewVoteCount"
+                style="@style/SimpleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/detailTagTextViewVoteCount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/detailTagTextViewVoteCount"
+                app:layout_constraintTop_toTopOf="@id/detailTagTextViewVoteCount" />
+
+            <TextView
+                android:id="@+id/detailTagTextViewVoteAverage"
+                style="@style/SimpleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_tag_vote_average"
+                app:layout_constraintBottom_toTopOf="@id/detailVideos"
+                app:layout_constraintEnd_toStartOf="@id/detailTextViewVoteAverage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailTagTextViewVoteCount" />
+
+            <TextView
+                android:id="@+id/detailTextViewVoteAverage"
+                style="@style/SimpleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/detailTagTextViewVoteAverage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/detailTagTextViewVoteAverage"
+                app:layout_constraintTop_toTopOf="@id/detailTagTextViewVoteAverage" />
+
+            <TextView
+                android:id="@+id/detailVideos"
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/detail_videos"
+                app:layout_constraintBottom_toTopOf="@id/videosProgress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detailTagTextViewVoteAverage" />
+            <TextView
+                android:id="@+id/errorVideosNotFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:text="@string/videos_not_found"
+                app:layout_constraintTop_toBottomOf="@id/detailVideos"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="gone"/>
+            <ProgressBar
+                android:id="@+id/videosProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/barrier"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/videosRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier"
+                app:layout_constraintBottom_toTopOf="@id/detailReviews"
+                />
+            <TextView
+                android:id="@+id/detailReviews"
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_reviews"
+                app:layout_constraintBottom_toTopOf="@id/barrierTwo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/videosProgress" />
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrierTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:layout_constraintTop_toBottomOf="@id/detailReviews"
+                />
+            <TextView
+                android:id="@+id/errorReviewsNotFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:text="@string/reviews_not_found"
+                app:layout_constraintTop_toBottomOf="@id/detailReviews"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="gone"/>
+            <ProgressBar
+                android:id="@+id/reviewsProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/barrierTwo"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="36dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reviewsRecyclerView"
+                android:layout_width="match_parent"
+                android:nestedScrollingEnabled="false"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/barrierTwo"/>
+
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:layout_constraintTop_toBottomOf="@id/detailVideos"
+                 />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
